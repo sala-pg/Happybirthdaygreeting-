@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Chriscelle Jane!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+        .surprise {
+            display: none;
+            transform: scale(0);
+            transition: transform 0.5s ease-out;
+        }
+        .revealed {
+            display: block;
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-pink-100 to-purple-200 min-h-screen flex flex-col items-center justify-center p-4">
+    <div class="max-w-lg w-full bg-white rounded-3xl shadow-2xl overflow-hidden p-8 text-center">
+        <!-- Header (Tanpa Gambar) -->
+        <div class="floating mb-6">
+            <div class="flex justify-center">
+                <div class="text-2xl text-purple-600 font-bold">🎉 Happy Birthday 🎉</div>
+            </div>
+        </div>
+
+        <h1 class="text-4xl font-bold text-purple-600 mb-2">Happy 27th Birthday!</h1>
+        <h2 class="text-2xl font-semibold text-pink-500 mb-6">Chriscelle Jane ✨</h2>
+
+        <div class="text-gray-700 text-lg mb-8">
+            <p class="mb-4">Dear Bestie from SL,</p>
+            <p class="mb-4">Another year of being fabulous achieved!</p>
+            <p>27 looks good on you... mostly because it's just 72 backwards! 😜</p>
+        </div>
+
+        <!-- Surprise Button -->
+        <button id="surpriseBtn" class="bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:scale-105 transition-transform mb-8">
+            🎁 CLICK FOR YOUR SURPRISE 🎁
+        </button>
+
+        <!-- Hidden Surprises -->
+        <div id="surpriseContent" class="surprise">
+            <div class="space-y-4 text-left bg-yellow-50 p-4 rounded-lg">
+                <p class="font-bold text-purple-700">🎂 To the Queen of:</p>
+                <ul class="list-disc list-inside text-gray-700">
+                    <li>Being fashionably late to adulthood</li>
+                    <li>Claiming you'll "start adulting tomorrow"</li>
+                    <li>Having more snacks than actual groceries</li>
+                    <li>Counting steps but only to the fridge</li>
+                </ul>
+
+                <p class="italic text-center mt-4 text-pink-600">"May your WiFi be strong, your snacks plentiful, and your wrinkles be Photoshop-able!"</p>
+
+                <p class="font-bold text-center mt-4 text-purple-800">From your forever bestie Sl ❤️</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('surpriseBtn').addEventListener('click', function() {
+            const surprise = document.getElementById('surpriseContent');
+            surprise.classList.toggle('revealed');
+
+            if (surprise.classList.contains('revealed')) {
+                this.textContent = "😂 HIDE THE EMBARRASSMENT 😂";
+            } else {
+                this.textContent = "🎁 CLICK FOR YOUR SURPRISE 🎁";
+            }
+        });
+    </script>
+</body>
+</html>
